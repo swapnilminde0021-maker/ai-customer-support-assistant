@@ -1,0 +1,32 @@
+function sendMessage() {
+
+let input = document.getElementById("userInput");
+let msg = input.value.toLowerCase();
+
+let response = "";
+
+if(msg.includes("hello")){
+response = "Hello! How can I assist you today?";
+}
+else if(msg.includes("course")){
+response = "We offer AI, Web Development and Data Science courses.";
+}
+else if(msg.includes("fees")){
+response = "Course fees start from ₹4999.";
+}
+else if(msg.includes("contact")){
+response = "You can contact us at support@example.com";
+}
+else if(msg.includes("admission")){
+response = "Admissions are open. You can register online.";
+}
+else{
+response = "Thank you for your query. Our support team will contact you soon.";
+}
+
+document.getElementById("chatbox").innerHTML +=
+`<div class="user">${input.value}</div>
+<div class="bot">${response}</div>`;
+
+input.value = "";
+}
